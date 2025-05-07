@@ -62,3 +62,18 @@ GROUP BY department
 ORDER BY SUM(salary) DESC
 LIMIT 1;
 
+-- Salary difference between the highest and lowest paid employees in each department.
+SELECT department,
+MAX(salary)-MIN(salary) as salary_difference
+FROM employees
+GROUP BY department;
+
+-- 10% salary increase to all employees who are older than 40.
+UPDATE employees
+SET salary=salary * 1.10
+WHERE age>40;
+
+--Median salary of employees
+SELECT 
+percentile_cont(0.5) WITHIN GROUP(ORDER BY salary) as median_salary
+FROM employees;
