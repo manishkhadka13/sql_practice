@@ -1,0 +1,9 @@
+# macOS system files
+.DS_Store
+
+# SQL temp or backup files
+*.sql~
+
+# Editor-specific folders (optional)
+.vscode/
+.idea/
